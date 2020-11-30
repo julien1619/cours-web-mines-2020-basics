@@ -1,0 +1,24 @@
+body #main-content div.box > a,
+a.special {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: sans-serif;
+
+  color: #000;
+  background-color: #fff;
+}
+
+body #main-content {
+  position: relative;
+}
+
+body #main-content div.box > a,
+a.special {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100px;
+  height: 100px;
+
+  display: block; /*hidden, inline, ...*/
+}
