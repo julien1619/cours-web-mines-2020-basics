@@ -21,3 +21,8 @@
 .wrapper {
   padding-bottom: 282px;
 }
+
+.author {
+  font-weight: bold;
+  color: red;
+}

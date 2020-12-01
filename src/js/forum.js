@@ -1,13 +1,21 @@
 import $ from "jquery";
 import ky from "ky";
+import { format, formatDistance } from "date-fns";
+import { fr } from "date-fns/locale";
 
 function getMessageView(message) {
+  const date = new Date(message.timestamp);
+  const formattedDate = format(date, "PPPPp", { locale: fr });
+  const dateDistance = formatDistance(date, new Date(), {
+    locale: fr,
+  });
+
   return `<div class="card my-3">
   <div class="card-body">
     <p class="card-text">${message.content}</p>
   </div>
   <div class="card-footer text-muted text-right">
-    Par ${message.author}, le 30 novembre 2020
+    Par <span class="author">${message.author}</span>, ${formattedDate}, il y a ${dateDistance}
   </div>
 </div>`;
 }
